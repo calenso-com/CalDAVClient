@@ -80,6 +80,8 @@ final class EventRequestVO
      */
     private $time_zone;
 
+    private ?int $reminderMinutesBeforeStart = null;
+
     /**
      * EventRequestDTO constructor.
      * @param string $prod_id
@@ -226,6 +228,16 @@ final class EventRequestVO
     public function getProdId()
     {
         return $this->prod_id;
+    }
+    
+    public function setReminderMinutesBeforeStart(?int $minutes): void
+    {
+        $this->reminderMinutesBeforeStart = $minutes;
+    }
+    
+    public function getReminderMinutesBeforeStart(): ?int
+    {
+        return $this->reminderMinutesBeforeStart;
     }
 
 }
